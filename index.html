@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pengolah Sertifikat & Dokumen Digital</title>
+    <link rel="stylesheet" href="styling/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Pengolah Sertifikat & Dokumen Digital</h1>
+      <p>Konversi PDF menjadi gambar & ekstrak teks dengan mudah</p>
+    </header>
+
+    <main>
+      <section class="upload-section">
+        <div class="card">
+          <h2>Upload File</h2>
+          <p>Pilih file PDF atau dokumen lainnya untuk diproses</p>
+          <input type="file" id="fileInput" accept=".pdf,.txt,.doc,.docx" />
+          <div class="button-container">
+            <button id="convertButton">Proses File</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="result-section">
+        <div class="card" id="imageOutputCard">
+          <h2>Hasil Konversi Gambar</h2>
+          <p class="instruction-text">
+            Hasil konversi sertifikat akan muncul di sini
+          </p>
+          <div id="imageOutput"></div>
+          <div class="button-container">
+            <button id="downloadImageButton" class="hidden">
+              Unduh Gambar
+            </button>
+          </div>
+        </div>
+
+        <div class="card" id="textOutputCard">
+          <h2>Hasil Ekstraksi Teks</h2>
+          <p class="instruction-text">Teks dari dokumen akan muncul di sini</p>
+          <div id="textOutput"></div>
+          <div class="button-container">
+            <button id="copyTextButton" class="hidden">Salin Teks</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="loading-section hidden" id="loadingSection">
+        <div class="loading-spinner"></div>
+        <p>Sedang memproses file Anda...</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; 2025 Pengolah Sertifikat & Dokumen Digital. Semua hak dilindungi.
+      </p>
+    </footer>
+
+    <!-- Library untuk memproses PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <script>
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js";
+    </script>
+
+    <!-- Kode JavaScript kustom -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
